@@ -5,6 +5,8 @@ class UrbanRoutesPage:
     FROM_LOCATOR = (By.ID, 'from')
     TO_LOCATOR = (By.ID, 'to')
     CUSTOM_OPTION_LOCATOR = (By.XPATH, '//div[text()="Custom"]')
+    OPTIMAL_OPTION_LOCATOR = (By.XPATH, '//div[text()="Optimal"]')
+    FASTEST_OPTION_LOCATOR = (By.XPATH, '//div[text()="Fastest"]')
     SCOOTER_ICON_LOCATOR = (By.XPATH, '//img[@src="/static/media/scooter.cf9bb57e.svg"]')
     SCOOTER_TEXT_LOCATOR = (By.XPATH, '//div[@class="results-text"]//div[@class="text"]')
     BIKE_ICON_LOCATOR = (By.XPATH, '//img[@src="/static/media/bike.fb41c762.svg"]')
@@ -36,6 +38,12 @@ class UrbanRoutesPage:
     def click_custom_option(self):
         # Click Custom
         self.driver.find_element(*self.CUSTOM_OPTION_LOCATOR).click()
+
+    def click_optimal_option(self):
+        self.driver.find_element(*self.OPTIMAL_OPTION_LOCATOR).click()
+
+    def click_fastest_option(self):
+        self.driver.find_element(*self.FASTEST_OPTION_LOCATOR).click()
 
     def click_scooter_icon(self):
         # Click Scooter Icon
